@@ -35,7 +35,7 @@ def create_vector_db(texts):
     embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     if not os.path.exists(chroma_db_dir):
         os.makedirs(chroma_db_dir)
-    vectordb = Chroma.from_documents(texts, embedding, persist_directory=chroma_db_dir)
+    vectordb = Chroma.from_documents(texts, embedding) 
     vectordb.persist()
     return vectordb
 
@@ -83,6 +83,5 @@ def answer_question(query):
     formatted_response += f'\n**Location**: ["{location_link}"]({location_link})'
 
     return formatted_response
-
 
 
