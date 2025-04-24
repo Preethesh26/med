@@ -1,0 +1,9 @@
+
+streamlit
+pandas
+openpyxl
+langchain
+langchain-community
+chromadb
+sentence-transformers
+torch
